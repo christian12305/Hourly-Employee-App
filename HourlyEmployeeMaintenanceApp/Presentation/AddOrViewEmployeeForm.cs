@@ -7,11 +7,16 @@
  */
 namespace HourlyEmployeeMaintenanceApp.Presentation
 {
-    public partial class AddOrViewEmployee : Form
+    public partial class AddOrViewEmployeeForm : Form
     {
-        public AddOrViewEmployee()
+        public AddOrViewEmployeeForm()
         {
             InitializeComponent();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
