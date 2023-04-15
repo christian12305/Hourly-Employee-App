@@ -1,8 +1,8 @@
 ﻿/*
  * File: FormValidator.cs
- * Author: Antonio F. Huertas 841-##-####
+ * Author: Christian Ramos Ortega 841184582
  * Course: COTI 4150-KJ1 Prof. Antonio F. Huertas
- * Date: 03/28/2023
+ * Date: 04/15/2023
  * Purpose: This utility class contains validation methods for the form controls.
  */
 
