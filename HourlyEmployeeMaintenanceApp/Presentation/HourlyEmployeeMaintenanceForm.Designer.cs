@@ -147,6 +147,7 @@
             this.btnExit.TabIndex = 6;
             this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // HourlyEmployeeMaintenanceForm
             // 
