@@ -36,12 +36,17 @@
             this.colDepartment = new System.Windows.Forms.ColumnHeader();
             this.colWeekStart = new System.Windows.Forms.ColumnHeader();
             this.colSalary = new System.Windows.Forms.ColumnHeader();
+            this.btnAddNew = new System.Windows.Forms.Button();
+            this.btnView = new System.Windows.Forms.Button();
+            this.btnModify = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblEmployees
             // 
             this.lblEmployees.AutoSize = true;
-            this.lblEmployees.Location = new System.Drawing.Point(22, 18);
+            this.lblEmployees.Location = new System.Drawing.Point(21, 15);
             this.lblEmployees.Name = "lblEmployees";
             this.lblEmployees.Size = new System.Drawing.Size(67, 15);
             this.lblEmployees.TabIndex = 0;
@@ -57,17 +62,103 @@
             this.colDepartment,
             this.colWeekStart,
             this.colSalary});
+            this.lvwEmployees.FullRowSelect = true;
+            this.lvwEmployees.GridLines = true;
+            this.lvwEmployees.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvwEmployees.Location = new System.Drawing.Point(22, 36);
+            this.lvwEmployees.MultiSelect = false;
             this.lvwEmployees.Name = "lvwEmployees";
-            this.lvwEmployees.Size = new System.Drawing.Size(541, 189);
+            this.lvwEmployees.Size = new System.Drawing.Size(547, 139);
             this.lvwEmployees.TabIndex = 1;
             this.lvwEmployees.UseCompatibleStateImageBehavior = false;
+            this.lvwEmployees.View = System.Windows.Forms.View.Details;
+            // 
+            // colEmployeeId
+            // 
+            this.colEmployeeId.Text = "Employee ID";
+            this.colEmployeeId.Width = 90;
+            // 
+            // colSocialSecurity
+            // 
+            this.colSocialSecurity.Text = "Social Security";
+            this.colSocialSecurity.Width = 90;
+            // 
+            // colFullName
+            // 
+            this.colFullName.Text = "Full Name";
+            this.colFullName.Width = 90;
+            // 
+            // colDepartment
+            // 
+            this.colDepartment.Text = "Department";
+            this.colDepartment.Width = 90;
+            // 
+            // colWeekStart
+            // 
+            this.colWeekStart.Text = "Week Start";
+            this.colWeekStart.Width = 90;
+            // 
+            // colSalary
+            // 
+            this.colSalary.Text = "Salary";
+            this.colSalary.Width = 90;
+            // 
+            // btnAddNew
+            // 
+            this.btnAddNew.Location = new System.Drawing.Point(589, 36);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.Size = new System.Drawing.Size(75, 23);
+            this.btnAddNew.TabIndex = 2;
+            this.btnAddNew.Text = "&Add New...";
+            this.btnAddNew.UseVisualStyleBackColor = true;
+            // 
+            // btnView
+            // 
+            this.btnView.Location = new System.Drawing.Point(589, 65);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(75, 23);
+            this.btnView.TabIndex = 3;
+            this.btnView.Text = "&View...";
+            this.btnView.UseVisualStyleBackColor = true;
+            // 
+            // btnModify
+            // 
+            this.btnModify.Location = new System.Drawing.Point(589, 94);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(75, 23);
+            this.btnModify.TabIndex = 4;
+            this.btnModify.Text = "&Modify...";
+            this.btnModify.UseVisualStyleBackColor = true;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(589, 123);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnRemove.TabIndex = 5;
+            this.btnRemove.Text = "&Remove...";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(589, 152);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 6;
+            this.btnExit.Text = "E&xit";
+            this.btnExit.UseVisualStyleBackColor = true;
             // 
             // HourlyEmployeeMaintenanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 338);
+            this.CancelButton = this.btnExit;
+            this.ClientSize = new System.Drawing.Size(683, 208);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnRemove);
+            this.Controls.Add(this.btnModify);
+            this.Controls.Add(this.btnView);
+            this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.lvwEmployees);
             this.Controls.Add(this.lblEmployees);
             this.Name = "HourlyEmployeeMaintenanceForm";
@@ -88,5 +179,10 @@
         private ColumnHeader colDepartment;
         private ColumnHeader colWeekStart;
         private ColumnHeader colSalary;
+        private Button btnAddNew;
+        private Button btnView;
+        private Button btnModify;
+        private Button btnRemove;
+        private Button btnExit;
     }
 }
