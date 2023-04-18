@@ -8,9 +8,29 @@
 namespace HourlyEmployeeMaintenanceApp.Domain
 {
     /// <summary>
-    /// 
+    /// The set of allowed Company Departments.
     /// </summary>
     public enum CompanyDepartment
     {
+        /// <summary>
+        /// A department classified as Finance.
+        /// </summary>
+        Finance,
+        /// <summary>
+        /// A department classified as Sales
+        /// </summary>
+        Sales,
+        /// <summary>
+        /// A department classified as Marketing
+        /// </summary>
+        Marketing,
+        /// <summary>
+        /// A department classified as Human Resources
+        /// </summary>
+        HumanResources,
+        /// <summary>
+        /// A department classified as Information Technology
+        /// </summary>
+        InformationTechnology
     }
 }
