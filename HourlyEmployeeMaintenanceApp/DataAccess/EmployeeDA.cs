@@ -29,5 +29,14 @@ namespace HourlyEmployeeMaintenanceApp.DataAccess
             };
             return employees;
         }
+
+        /// <summary>
+        /// Saves a list of employees.
+        /// </summary>
+        /// <param name="employees">The list of employees being saved. </param>
+        public static void SaveEmployees(List<HourlyEmployee> employees)
+        {
+            // Does nothing since no file or database table is used.
+        }
     }
 }
