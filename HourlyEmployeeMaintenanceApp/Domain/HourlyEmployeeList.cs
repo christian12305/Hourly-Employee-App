@@ -39,6 +39,6 @@ namespace HourlyEmployeeMaintenanceApp.Domain
         /// <returns></returns>
         public int Count() => contents.Count;
 
-        public void Fill() => contents = EmployeeDA.GetProducts();
+        public void Fill() => contents = EmployeeDA.GetEmployees();
     }
 }
