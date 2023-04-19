@@ -31,7 +31,7 @@ namespace HourlyEmployeeMaintenanceApp.Domain
         public CompanyDepartment Department { get; init; }
 
         /// <summary> Get or initializes the week the employee started at </summary>
-        public DateOnly WeekStart { get; init; }
+        public DateTime WeekStart { get; init; }
 
         /// <summary> Get or initializes the pay rate for the employee. </summary>
         public decimal PayRate { get; init; }
@@ -50,7 +50,7 @@ namespace HourlyEmployeeMaintenanceApp.Domain
         /// <param name="payRate">The pay rate for the employee</param>
         /// <param name="hoursWorked">The amount of hours worked by the employee</param>
         public HourlyEmployee(string employeeID, string socialSecurity, string fullName,
-            CompanyDepartment department, DateOnly weekStart, decimal payRate = DefaultPayRate, int hoursWorked = DefaultHoursWorked) =>
+            CompanyDepartment department, DateTime weekStart, decimal payRate = DefaultPayRate, int hoursWorked = DefaultHoursWorked) =>
             (EmployeeID, SocialSecurity, FullName, Department, WeekStart, PayRate, HoursWorked) = (employeeID, socialSecurity, fullName, department, weekStart, payRate, hoursWorked);
 
         /// <summary>
