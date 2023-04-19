@@ -7,8 +7,16 @@
  */
 namespace HourlyEmployeeMaintenanceApp.Domain
 {
-    internal class HourlyEmployeeList
+    public class HourlyEmployeeList
     {
+        /// <summary>The contents of the internal list of hourly employees. </summary>
+        private List<HourlyEmployee> hourlyEmployees;
+
+        /// <summary>
+        /// Delegate for the change event handler.
+        /// </summary>
+        /// <param name="employees">The list of hourly employees</param>
+        public delegate void ChangeEventHandler(HourlyEmployeeList employees);
 
     }
 }
