@@ -243,6 +243,7 @@
             this.Name = "AddOrViewEmployeeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee";
+            this.Load += new System.EventHandler(this.AddOrViewEmployeeForm_Load);
             this.grpEmployeeData.ResumeLayout(false);
             this.grpEmployeeData.PerformLayout();
             this.ResumeLayout(false);

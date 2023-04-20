@@ -111,6 +111,7 @@
             this.btnAddNew.TabIndex = 2;
             this.btnAddNew.Text = "&Add New...";
             this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // btnView
             // 
@@ -120,6 +121,7 @@
             this.btnView.TabIndex = 3;
             this.btnView.Text = "&View...";
             this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // btnModify
             // 
@@ -129,6 +131,7 @@
             this.btnModify.TabIndex = 4;
             this.btnModify.Text = "&Modify...";
             this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
             // btnRemove
             // 
@@ -138,6 +141,7 @@
             this.btnRemove.TabIndex = 5;
             this.btnRemove.Text = "&Remove...";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnExit
             // 
@@ -165,6 +169,7 @@
             this.Name = "HourlyEmployeeMaintenanceForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hourly Employee Maintenace";
+            this.Load += new System.EventHandler(this.HourlyEmployeeMaintenanceForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
