@@ -95,7 +95,7 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
         {
 
             if (lvwEmployees.SelectedIndices.Count == 0)
-                MessageBox.Show("No product was selected.", "View Product",
+                MessageBox.Show("No employee was selected.", "View Employee",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             else
@@ -120,7 +120,7 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
         private void btnModify_Click(object sender, EventArgs e)
         {
             if (lvwEmployees.SelectedIndices.Count == 0)
-                MessageBox.Show("No product was selected.", "Modify Product", 
+                MessageBox.Show("No employee was selected.", "Modify Employee", 
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             else
@@ -149,7 +149,7 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
         private void btnRemove_Click(object sender, EventArgs e)
         {
             if (lvwEmployees.SelectedIndices.Count == 0)
-                MessageBox.Show("No product was selected.", "Remove Product",
+                MessageBox.Show("No employee was selected.", "Remove Employee",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
