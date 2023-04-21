@@ -2,11 +2,10 @@
  * File: AddOrViewEmployee.cs
  * Author: Christian Ramos Ortega 841184582
  * Course: COTI 4150-KJ1 Prof. Antonio F. Huertas
- * Date: 04/19/2023
+ * Date: 04/20/2023
  * Purpose: This form is to add or view the information for an employee.
  */
 using HourlyEmployeeMaintenanceApp.Domain;
-using System.Runtime.InteropServices;
 
 namespace HourlyEmployeeMaintenanceApp.Presentation
 {
@@ -51,6 +50,9 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
             cboDepartment.Items.Add(CompanyDepartment.Finance);
             cboDepartment.Items.Add(CompanyDepartment.Sales);
             cboDepartment.Items.Add(CompanyDepartment.InformationTechnology);
+
+            dtpWeekStart.MaxDate = DateTime.Now;
+            dtpWeekStart.MinDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month-1, DateTime.Now.Day);
 
             if (this.EmployeeData == null)
                 this.Text = "Add New " + this.Text;
@@ -131,10 +133,7 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
                 var payRate = Decimal.Parse(txtPayRate.Text);
                 var hoursWorked = Int32.Parse(txtHoursWorked.Text);
 
-                EmployeeData = new HourlyEmployee(empID, SS, fullName, dpt, wkStart, payRate, hoursWorked );
-
-                //MessageBox.Show($"The following will be saved:\n\n{EmployeeData.ToString("\n")}", 
-                //    "Save Product", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                EmployeeData = new HourlyEmployee(empID, SS, fullName, dpt, wkStart, payRate, hoursWorked);
 
                 this.DialogResult = DialogResult.OK;
             }
@@ -149,10 +148,10 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
             return
                 FormValidator.IsPresent(txtEmployeeID) &&
                 FormValidator.MatchesPattern(txtEmployeeID, HourlyEmployeeConsts.IdPattern) &&
-                
+
                 FormValidator.IsPresent(txtSocialSecurity) &&
                 FormValidator.MatchesPattern(txtSocialSecurity, HourlyEmployeeConsts.SSPattern) &&
-                
+
                 FormValidator.IsPresent(txtFirstName) &&
                 FormValidator.MatchesPattern(txtFirstName, HourlyEmployeeConsts.NamePattern) &&
 
