@@ -49,8 +49,7 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
                 string[] fields =
                 {
                     employee.EmployeeID, employee.SocialSecurity, employee.FullName,
-                    employee.Department.ToString(), employee.WeekStart.ToString(), employee.PayRate.ToString("c"),
-                    employee.HoursWorked.ToString()
+                    employee.Department.ToString(), employee.WeekStart.ToShortDateString().ToString(), employee.WeeklySalary().ToString("c")
                 };
 
                 var item = new ListViewItem(fields);

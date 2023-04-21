@@ -86,7 +86,7 @@
             // colFullName
             // 
             this.colFullName.Text = "Full Name";
-            this.colFullName.Width = 90;
+            this.colFullName.Width = 120;
             // 
             // colDepartment
             // 
@@ -96,12 +96,13 @@
             // colWeekStart
             // 
             this.colWeekStart.Text = "Week Start";
-            this.colWeekStart.Width = 90;
+            this.colWeekStart.Width = 80;
             // 
             // colSalary
             // 
             this.colSalary.Text = "Salary";
-            this.colSalary.Width = 90;
+            this.colSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.colSalary.Width = 70;
             // 
             // btnAddNew
             // 
