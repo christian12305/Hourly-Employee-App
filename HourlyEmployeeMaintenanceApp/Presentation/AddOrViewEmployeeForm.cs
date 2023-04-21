@@ -16,6 +16,8 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
     {
         /// <summary>Gets or sets the product data for the form. </summary>
         public HourlyEmployee? EmployeeData { get; set; }
+        /// <summary>Flag to determine if its the view or a modify option. </summary>
+        public bool isView { get; set; }
 
         /// <summary>
         /// Creates a new form.
@@ -35,13 +37,17 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
             this.Close();
         }
 
+        /// <summary>
+        /// If form has data, view or modify, else its Add.
+        /// </summary>
+        /// <param name="sender">The control that raised the event.</param>
+        /// <param name="e">The event data.</param>
         private void AddOrViewEmployeeForm_Load(object sender, EventArgs e)
         {
 
-            //AQUI FALTA CONSIDERAR EL MODIFY FORM
             if (this.EmployeeData == null)
                 this.Text = "Add New " + this.Text;
-            else
+            else if( this.EmployeeData != null && isView == true)
             {
                 this.Text = "View " + this.Text;
                 txtEmployeeID.Text = EmployeeData.EmployeeID;
@@ -59,6 +65,21 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
                 txtHoursWorked.Text = EmployeeData.HoursWorked.ToString();
                 txtHoursWorked.ReadOnly = true;
                 btnOK.Visible = false;
+            }
+            else if(this.EmployeeData != null && isView == false)
+            {
+                this.Text = "Modify " + this.Text;
+                txtEmployeeID.Text = EmployeeData!.EmployeeID;
+                txtSocialSecurity.Text = EmployeeData.SocialSecurity;
+                String[] arr = EmployeeData.FullName.Split("\\s+");
+                txtFirstName.Text = arr[0];
+                txtInitial.Text = arr[1];
+                txtLastName.Text = arr[2];
+                cboDepartment.SelectedItem = EmployeeData.Department;
+                dtpWeekStart.Value = EmployeeData.WeekStart;
+                dtpWeekStart.Enabled = false;
+                txtPayRate.Text = EmployeeData.PayRate.ToString("f2");
+                txtHoursWorked.Text = EmployeeData.HoursWorked.ToString("d");
             }
         }
 

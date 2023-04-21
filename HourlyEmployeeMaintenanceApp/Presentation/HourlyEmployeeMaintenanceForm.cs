@@ -62,10 +62,10 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
         }
 
         /// <summary>
-        /// 
+        /// Closes the form when the Exit button is clicked.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender"> The control that raised the event. </param>
+        /// <param name="e"> The event data. </param>
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -132,6 +132,7 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
                 {
                     EmployeeData = employee
                     //DEBO ENVIAR ALGO ADICIONAL PARA QUE DETECTE SI ES VIEW OR MODIFY
+                    isView = false;
                 };
 
                 var result = frmModifyEmployee.ShowDialog();
