@@ -120,11 +120,11 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
         {
             if (IsValidData())
             {
-                var empID = txtEmployeeID.Text;
-                var SS = txtSocialSecurity.Text;
-                var FN = txtFirstName.Text;
-                var IN = txtInitial.Text;
-                var LN = txtLastName.Text;
+                var empID = txtEmployeeID.Text.Trim();
+                var SS = txtSocialSecurity.Text.Trim();
+                var FN = txtFirstName.Text.Trim();
+                var IN = txtInitial.Text.Trim();
+                var LN = txtLastName.Text.Trim();
                 var fullName = FN + " " + IN + " " + LN;
                 var dpt = (CompanyDepartment) cboDepartment.SelectedIndex;
                 var wkStart = dtpWeekStart.Value;
@@ -133,8 +133,8 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
 
                 EmployeeData = new HourlyEmployee(empID, SS, fullName, dpt, wkStart, payRate, hoursWorked );
 
-                MessageBox.Show($"The following will be saved:\n\n{EmployeeData.ToString("\n")}", 
-                    "Save Product", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show($"The following will be saved:\n\n{EmployeeData.ToString("\n")}", 
+                //    "Save Product", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.DialogResult = DialogResult.OK;
             }
