@@ -37,11 +37,13 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
 
         private void AddOrViewEmployeeForm_Load(object sender, EventArgs e)
         {
+
             //AQUI FALTA CONSIDERAR EL MODIFY FORM
             if (this.EmployeeData == null)
                 this.Text = "Add New " + this.Text;
             else
             {
+                this.Text = "View " + this.Text;
                 txtEmployeeID.Text = EmployeeData.EmployeeID;
                 txtEmployeeID.ReadOnly = true;
                 txtSocialSecurity.Text = EmployeeData.SocialSecurity;
@@ -58,6 +60,70 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
                 txtHoursWorked.ReadOnly = true;
                 btnOK.Visible = false;
             }
+        }
+
+        /// <summary>
+        /// Returns an employee with the input data when the OK button is clicked.
+        /// </summary>
+        /// <param name="sender">The control that raised the event.</param>
+        /// <param name="e">The event data.</param>
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            if (IsValidData())
+            {
+                
+                var empID = txtEmployeeID.Text;
+                var SS = txtSocialSecurity.Text;
+                var FN = txtFirstName.Text;
+                var IN = txtInitial.Text;
+                var LN = txtLastName.Text;
+                var fullName = FN + " " + IN + " " + LN;
+                var dpt = (CompanyDepartment) cboDepartment.SelectedItem;
+                var wkStart = dtpWeekStart.Value;
+                var payRate = Decimal.Parse(txtPayRate.Text);
+                var hoursWorked = Int32.Parse(txtHoursWorked.Text);
+
+                EmployeeData = new HourlyEmployee(empID, SS, fullName, dpt, wkStart, payRate, hoursWorked );
+
+                MessageBox.Show($"The following will be saved:\n\n{EmployeeData.ToString("\n")}", 
+                    "Save Product", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.DialogResult = DialogResult.OK;
+            }
+        }
+
+        /// <summary>
+        /// Determines whether the form has valid data.
+        /// </summary>
+        /// <returns>true if the data is valid; false otherwise.</returns>
+        private bool IsValidData()
+        {
+            return
+                FormValidator.IsPresent(txtEmployeeID) &&
+                FormValidator.MatchesPattern(txtEmployeeID, HourlyEmployeeConsts.IdPattern) &&
+                
+                FormValidator.IsPresent(txtSocialSecurity) &&
+                FormValidator.MatchesPattern(txtSocialSecurity, HourlyEmployeeConsts.SSPattern) &&
+                
+                FormValidator.IsPresent(txtFirstName) &&
+                FormValidator.MatchesPattern(txtFirstName, HourlyEmployeeConsts.NamePattern) &&
+
+                FormValidator.MatchesPattern(txtInitial, "[A-Z{1}]?") &&
+
+                FormValidator.IsPresent(txtLastName) &&
+                FormValidator.MatchesPattern(txtLastName, HourlyEmployeeConsts.NamePattern) &&
+
+                FormValidator.IsSelected(cboDepartment) &&
+
+                FormValidator.IsPresent(txtPayRate) &&
+                FormValidator.IsDecimal(txtPayRate) &&
+                FormValidator.IsWithinRange(txtPayRate, HourlyEmployeeConsts.MinPayRate, HourlyEmployeeConsts.MaxPayRate)&&
+
+                FormValidator.IsPresent(txtHoursWorked) &&
+                FormValidator.IsInt32(txtHoursWorked) && 
+                FormValidator.IsWithinRange(txtHoursWorked, HourlyEmployeeConsts.MinHoursWorked, HourlyEmployeeConsts.MaxHoursWorked);
+
+                ;
         }
     }
 }

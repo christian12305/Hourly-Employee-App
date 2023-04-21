@@ -14,6 +14,8 @@ namespace HourlyEmployeeMaintenanceApp.Domain
         public const string IdPattern = @"HW-\d{4}";
         /// <summary>Regular expression pattern for the name of the employee. </summary>
         public const string NamePattern = @"[A-Z]{1}[a-z]{3,15}";
+        /// <summary>Regular expression pattern for the social security number of the employee.  </summary>
+        public const string SSPattern = @"[\d{3}-\d{2}-\d{4}]";
         /// <summary>Minimum pay rate for the employee. </summary>
         public const decimal MinPayRate = 8.50m;
         /// <summary>Maximimum pay rate for the employee. </summary>
