@@ -49,14 +49,11 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
                 string[] fields =
                 {
                     employee.EmployeeID, employee.SocialSecurity, employee.FullName,
-                    employee.Department.ToString(), employee.WeekStart.ToString(), employee.PayRate.ToString(),
+                    employee.Department.ToString(), employee.WeekStart.ToString(), employee.PayRate.ToString("c"),
                     employee.HoursWorked.ToString()
                 };
 
-                var item = new ListViewItem(fields)
-                {
-                    BackColor = (i % 2 == 0) ? Color.Gray : Color.White
-                };
+                var item = new ListViewItem(fields);
                 lvwEmployees.Items.Add(item);
             }
         }
@@ -105,7 +102,8 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
 
                 var frmViewEmployee = new AddOrViewEmployeeForm()
                 {
-                    EmployeeData = employee
+                    EmployeeData = employee,
+                    isView = true
                 };
 
                 frmViewEmployee.ShowDialog();
@@ -130,9 +128,8 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
 
                 var frmModifyEmployee = new AddOrViewEmployeeForm()
                 {
-                    EmployeeData = employee
-                    //DEBO ENVIAR ALGO ADICIONAL PARA QUE DETECTE SI ES VIEW OR MODIFY
-                    isView = false;
+                    EmployeeData = employee,
+                    isView = false
                 };
 
                 var result = frmModifyEmployee.ShowDialog();

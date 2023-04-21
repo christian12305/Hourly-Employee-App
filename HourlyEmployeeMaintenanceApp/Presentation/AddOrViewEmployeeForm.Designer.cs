@@ -81,6 +81,7 @@
             this.txtHoursWorked.Name = "txtHoursWorked";
             this.txtHoursWorked.Size = new System.Drawing.Size(100, 23);
             this.txtHoursWorked.TabIndex = 15;
+            this.txtHoursWorked.Tag = "HoursWorked";
             // 
             // lblHoursWorked
             // 
@@ -98,6 +99,7 @@
             this.txtPayRate.Name = "txtPayRate";
             this.txtPayRate.Size = new System.Drawing.Size(100, 23);
             this.txtPayRate.TabIndex = 13;
+            this.txtPayRate.Tag = "PayRate";
             // 
             // lblPayRate
             // 
@@ -117,6 +119,7 @@
             this.dtpWeekStart.Name = "dtpWeekStart";
             this.dtpWeekStart.Size = new System.Drawing.Size(125, 23);
             this.dtpWeekStart.TabIndex = 11;
+            this.dtpWeekStart.Tag = "WeekStart";
             this.dtpWeekStart.Value = new System.DateTime(2023, 4, 20, 0, 0, 0, 0);
             // 
             // lblWeekStart
@@ -137,6 +140,7 @@
             this.cboDepartment.Name = "cboDepartment";
             this.cboDepartment.Size = new System.Drawing.Size(121, 23);
             this.cboDepartment.TabIndex = 9;
+            this.cboDepartment.Tag = "Department";
             // 
             // lblDepartment
             // 
@@ -154,6 +158,7 @@
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(65, 23);
             this.txtLastName.TabIndex = 7;
+            this.txtLastName.Tag = "LastName";
             // 
             // txtInitial
             // 
@@ -161,6 +166,7 @@
             this.txtInitial.Name = "txtInitial";
             this.txtInitial.Size = new System.Drawing.Size(36, 23);
             this.txtInitial.TabIndex = 6;
+            this.txtInitial.Tag = "Initial";
             // 
             // txtFirstName
             // 
@@ -168,6 +174,7 @@
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(58, 23);
             this.txtFirstName.TabIndex = 5;
+            this.txtFirstName.Tag = "FirstName";
             // 
             // lblFullName
             // 
@@ -185,6 +192,7 @@
             this.txtSocialSecurity.Name = "txtSocialSecurity";
             this.txtSocialSecurity.Size = new System.Drawing.Size(100, 23);
             this.txtSocialSecurity.TabIndex = 3;
+            this.txtSocialSecurity.Tag = "SocialSecurity";
             // 
             // lblSocialSecurity
             // 
@@ -202,6 +210,7 @@
             this.txtEmployeeID.Name = "txtEmployeeID";
             this.txtEmployeeID.Size = new System.Drawing.Size(100, 23);
             this.txtEmployeeID.TabIndex = 1;
+            this.txtEmployeeID.Tag = "EmployeeID";
             // 
             // lblEmployeeID
             // 

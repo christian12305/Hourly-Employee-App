@@ -23,9 +23,9 @@ namespace HourlyEmployeeMaintenanceApp.DataAccess
             var employees = new List<HourlyEmployee>()
             {
                 //Remember to validate SSecurityNum
-                new HourlyEmployee("HW-0011", "123456789", "Juan", CompanyDepartment.Sales, DateTime.Now.Date, 8.50m, 40),
-                new HourlyEmployee("HW-0022", "987654321", "Pedro", CompanyDepartment.Finance, DateTime.Now.Date, 9.50m, 48),
-                new HourlyEmployee("HW-0033", "111222333", "Luis", CompanyDepartment.InformationTechnology, DateTime.Now.Date, 11.50m, 25)
+                new HourlyEmployee("HW-0011", "123-45-6789", "Juan", CompanyDepartment.Sales, DateTime.Now.Date, 8.50m, 40),
+                new HourlyEmployee("HW-0022", "987-65-4321", "Pedro", CompanyDepartment.Finance, DateTime.Now.Date, 9.50m, 48),
+                new HourlyEmployee("HW-0033", "111-22-2333", "Luis", CompanyDepartment.InformationTechnology, DateTime.Now.Date, 11.50m, 25)
             };
             return employees;
         }

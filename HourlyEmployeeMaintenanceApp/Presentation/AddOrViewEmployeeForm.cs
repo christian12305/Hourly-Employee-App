@@ -6,6 +6,7 @@
  * Purpose: This form is to add or view the information for an employee.
  */
 using HourlyEmployeeMaintenanceApp.Domain;
+using System.Runtime.InteropServices;
 
 namespace HourlyEmployeeMaintenanceApp.Presentation
 {
@@ -16,6 +17,7 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
     {
         /// <summary>Gets or sets the product data for the form. </summary>
         public HourlyEmployee? EmployeeData { get; set; }
+
         /// <summary>Flag to determine if its the view or a modify option. </summary>
         public bool isView { get; set; }
 
@@ -44,6 +46,11 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
         /// <param name="e">The event data.</param>
         private void AddOrViewEmployeeForm_Load(object sender, EventArgs e)
         {
+            cboDepartment.Items.Add(CompanyDepartment.HumanResources);
+            cboDepartment.Items.Add(CompanyDepartment.Marketing);
+            cboDepartment.Items.Add(CompanyDepartment.Finance);
+            cboDepartment.Items.Add(CompanyDepartment.Sales);
+            cboDepartment.Items.Add(CompanyDepartment.InformationTechnology);
 
             if (this.EmployeeData == null)
                 this.Text = "Add New " + this.Text;
@@ -54,8 +61,21 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
                 txtEmployeeID.ReadOnly = true;
                 txtSocialSecurity.Text = EmployeeData.SocialSecurity;
                 txtSocialSecurity.ReadOnly = true;
-                txtFirstName.Text = EmployeeData.FullName;
+                String[] arr = EmployeeData.FullName.Split(" ");
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    if (i == 0)
+                        txtFirstName.Text = arr[0];
+
+                    if (i == 1)
+                        txtInitial.Text = arr[1];
+
+                    if (i == 2)
+                        txtLastName.Text = arr[2];
+                }
                 txtFirstName.ReadOnly = true;
+                txtInitial.ReadOnly = true;
+                txtLastName.ReadOnly = true;
                 cboDepartment.SelectedItem = EmployeeData.Department;
                 cboDepartment.Enabled = false;
                 dtpWeekStart.Value = EmployeeData.WeekStart;
@@ -70,14 +90,22 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
             {
                 this.Text = "Modify " + this.Text;
                 txtEmployeeID.Text = EmployeeData!.EmployeeID;
+                txtEmployeeID.ReadOnly = true;
                 txtSocialSecurity.Text = EmployeeData.SocialSecurity;
-                String[] arr = EmployeeData.FullName.Split("\\s+");
-                txtFirstName.Text = arr[0];
-                txtInitial.Text = arr[1];
-                txtLastName.Text = arr[2];
+                String[] arr = EmployeeData.FullName.Split(" ");
+                for(int i = 0; i < arr.Length; i++)
+                {
+                    if(i == 0)
+                        txtFirstName.Text = arr[0];
+
+                    if(i == 1)
+                        txtInitial.Text = arr[1];
+
+                    if(i == 2)
+                        txtLastName.Text = arr[2];
+                }
                 cboDepartment.SelectedItem = EmployeeData.Department;
                 dtpWeekStart.Value = EmployeeData.WeekStart;
-                dtpWeekStart.Enabled = false;
                 txtPayRate.Text = EmployeeData.PayRate.ToString("f2");
                 txtHoursWorked.Text = EmployeeData.HoursWorked.ToString("d");
             }
@@ -92,14 +120,13 @@ namespace HourlyEmployeeMaintenanceApp.Presentation
         {
             if (IsValidData())
             {
-                
                 var empID = txtEmployeeID.Text;
                 var SS = txtSocialSecurity.Text;
                 var FN = txtFirstName.Text;
                 var IN = txtInitial.Text;
                 var LN = txtLastName.Text;
                 var fullName = FN + " " + IN + " " + LN;
-                var dpt = (CompanyDepartment) cboDepartment.SelectedItem;
+                var dpt = (CompanyDepartment) cboDepartment.SelectedIndex;
                 var wkStart = dtpWeekStart.Value;
                 var payRate = Decimal.Parse(txtPayRate.Text);
                 var hoursWorked = Int32.Parse(txtHoursWorked.Text);
