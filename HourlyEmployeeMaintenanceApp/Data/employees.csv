@@ -1,0 +1,4 @@
+EmployeeID,SocialSecurity,FullName,Department,WeekStart,payRate,HoursWorked
+HW-0011,123-45-6789,Juan I Ramos,Sales,5/7/2023 12:00:00 AM,8.50,40
+HW-0022,987-65-4321,Pedro J Martir,Finance,5/7/2023 12:00:00 AM,9.50,48
+HW-0033,111-22-2333,Luis K Ojeda,InformationTechnology,5/7/2023 12:00:00 AM,11.50,25

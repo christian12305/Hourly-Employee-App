@@ -1,0 +1,29 @@
+[
+  {
+    "employeeID": "HW-0011",
+    "socialSecurity": "123-45-6789",
+    "fullName": "Juan I Ramos",
+    "department": "Sales",
+    "weekStart": "2023-05-07T00:00:00-04:00",
+    "payRate": 8.50,
+    "hoursWorked": 40
+  },
+  {
+    "employeeID": "HW-0033",
+    "socialSecurity": "111-22-2333",
+    "fullName": "Luis K Ojeda",
+    "department": "InformationTechnology",
+    "weekStart": "2023-05-07T00:00:00-04:00",
+    "payRate": 11.50,
+    "hoursWorked": 25
+  },
+  {
+    "employeeID": "HW-0044",
+    "socialSecurity": "237-56-0294",
+    "fullName": "Christian  Ramos",
+    "department": "Marketing",
+    "weekStart": "2023-04-20T00:00:00",
+    "payRate": 30.00,
+    "hoursWorked": 40
+  }
+]

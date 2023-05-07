@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<employees>
+  <employee employeeid="HW-0011">
+    <socialsecurity>123-45-6789</socialsecurity>
+    <fullname>Juan I Ramos</fullname>
+    <department>Sales</department>
+    <weekstart>5/7/2023 12:00:00 AM</weekstart>
+    <payrate>8.50</payrate>
+    <hoursworked>40</hoursworked>
+  </employee>
+  <employee employeeid="HW-0022">
+    <socialsecurity>987-65-4321</socialsecurity>
+    <fullname>Pedro J Martir</fullname>
+    <department>Finance</department>
+    <weekstart>5/7/2023 12:00:00 AM</weekstart>
+    <payrate>9.50</payrate>
+    <hoursworked>48</hoursworked>
+  </employee>
+  <employee employeeid="HW-0033">
+    <socialsecurity>111-22-2333</socialsecurity>
+    <fullname>Luis K Ojeda</fullname>
+    <department>InformationTechnology</department>
+    <weekstart>5/7/2023 12:00:00 AM</weekstart>
+    <payrate>11.50</payrate>
+    <hoursworked>25</hoursworked>
+  </employee>
+</employees>

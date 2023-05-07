@@ -5,7 +5,7 @@
  * Date: 04/18/2023
  * Purpose: This class contains the list for the hourly employee.
  */
-using HourlyEmployeeMaintenanceApp.DataAccess;
+using EmployeeDA = HourlyEmployeeMaintenanceApp.DataAccess.HourlyEmployeeJsonDA;
 
 namespace HourlyEmployeeMaintenanceApp.Domain
 {
